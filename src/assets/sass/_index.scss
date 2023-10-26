@@ -1,5 +1,6 @@
 body {
     display: flex;
+    background-color: steelblue;
 
     #header {
         width: 25vw;
@@ -8,9 +9,32 @@ body {
         align-items: center;
         justify-content: space-between;
         padding: 1rem 2rem;
+        z-index: 2;
 
+        background-image: linear-gradient(
+            to left bottom,
+            #d14da8,
+            #bb529b,
+            #a6558d,
+            #91577f,
+            #7c5771
+        );
+        box-shadow: 12px 0px 5px 0px rgba(0, 0, 0, 0.75);
+        -webkit-box-shadow: 12px 0px 5px 0px rgba(0, 0, 0, 0.75);
+        -moz-box-shadow: 12px 0px 5px 0px rgba(0, 0, 0, 0.75);
         #logo {
             height: 20rem;
         }
+    }
+
+    .post-its-container {
+        width: 100%;
+        display: grid;
+        justify-items: center;
+        gap: 1rem;
+        grid-auto-flow: dense;
+        grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr));
+
+        padding: 2rem;
     }
 }

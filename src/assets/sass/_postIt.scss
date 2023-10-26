@@ -1,8 +1,10 @@
 @import 'variables';
 
-.post-it-container {
+.post-it {
     display: inline-block;
     width: 15rem;
-    height: 10rem;
+    // height: 10rem;
     background-color: $color-cherry-blossom-pink;
+    border-radius: 0.5rem;
+    padding: 1rem;
 }
