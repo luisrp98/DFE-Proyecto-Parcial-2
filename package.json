@@ -5,10 +5,10 @@
     "main": "index.js",
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1",
-        "start": "concurrently \"npm run watch:sass\" \"npm run serve\"",
+        "start": "concurrently \"npm run sass:watch\" \"npm run serve\"",
         "serve": "live-server src",
-        "watch:sass": "node-sass src/assets/sass/styles.scss src/assets/css/styles.css --watch",
-        "build-sass": "node-sass src/assets/sass/styles.scss src/assets/css/styles.css"
+        "sass:watch": "node-sass src/assets/sass/styles.scss src/assets/css/styles.css --watch",
+        "sass:build": "node-sass src/assets/sass/styles.scss src/assets/css/styles.css"
     },
     "repository": {
         "type": "git",
@@ -22,7 +22,9 @@
     "homepage": "https://github.com/luisrp98/DFE-Proyecto-Parcial-2#readme",
     "dependencies": {
         "concurrently": "^8.2.2",
-        "live-server": "^1.2.2",
+        "live-server": "^1.2.2"
+    },
+    "devDependencies": {
         "node-sass": "^9.0.0"
     }
 }

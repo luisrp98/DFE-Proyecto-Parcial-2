@@ -1,0 +1,30 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; }
+
+html {
+  font-size: 16px; }
+
+body {
+  font-family: 'Fira Sans', sans-serif;
+  height: 100vh;
+  background-image: linear-gradient(to left bottom, #d14da8, #bb529b, #a6558d, #91577f, #7c5771); }
+
+body {
+  display: flex; }
+  body #header {
+    width: 25vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 2rem; }
+    body #header #logo {
+      height: 20rem; }
+
+.post-it-container {
+  display: inline-block;
+  width: 15rem;
+  height: 10rem;
+  background-color: #ffb6c1ff; }
