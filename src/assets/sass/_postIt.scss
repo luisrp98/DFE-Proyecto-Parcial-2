@@ -2,9 +2,18 @@
 
 .post-it {
     display: inline-block;
-    width: 15rem;
-    // height: 10rem;
+    width: 100%;
     background-color: $color-cherry-blossom-pink;
     border-radius: 0.5rem;
     padding: 1rem;
+    margin-bottom: 1rem;
+
+    .post-it-title {
+        margin-bottom: 1rem;
+    }
+    .post-it-text {
+        display: flex;
+        margin-bottom: 1rem;
+        gap: 1rem;
+    }
 }
