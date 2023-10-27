@@ -7,6 +7,7 @@
     border-radius: 0.5rem;
     padding: 1rem;
     margin-bottom: 1rem;
+    transition: transform 0.3s;
 
     .post-it-title {
         margin-bottom: 1rem;
@@ -16,4 +17,9 @@
         margin-bottom: 1rem;
         gap: 1rem;
     }
+
+    &:hover {
+        transform: scale(1.03);
+    }
 }
+// Con sass es posible cambiar una clase si el contenido html de un tag es uno u otro? Por ejemplo si dentro de <p> dice "Alta" o "Baja"

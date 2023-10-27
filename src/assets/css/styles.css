@@ -29,7 +29,7 @@ body {
       height: 20rem; }
   body .post-its-container {
     width: 100%;
-    padding: 2rem;
+    padding: 3rem;
     column-width: 18rem;
     column-gap: 1rem; }
 
@@ -39,10 +39,13 @@ body {
   background-color: #ffb6c1ff;
   border-radius: 0.5rem;
   padding: 1rem;
-  margin-bottom: 1rem; }
+  margin-bottom: 1rem;
+  transition: transform 0.3s; }
   .post-it .post-it-title {
     margin-bottom: 1rem; }
   .post-it .post-it-text {
     display: flex;
     margin-bottom: 1rem;
     gap: 1rem; }
+  .post-it:hover {
+    transform: scale(1.03); }
