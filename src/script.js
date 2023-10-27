@@ -1,3 +1,8 @@
-import { generatePostIt } from './assets/scripts/generatePostIt.js'
+import {
+    getTasks,
+    createTask,
+    deleteTask,
+    updateTask,
+} from './assets/scripts/functionsAPI.js'
 
-generatePostIt('Test', 'Test', 'Test', 'Test', 'Test')
+getTasks()
