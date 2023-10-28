@@ -19,10 +19,18 @@ export function getTasks() {
     fetchData(apiUrl).then((data) => {
         console.log('Datos de la API (GET):', data)
         data.forEach((task) => {
-            // ! Delete after
             // With the task info, create a post it in the container
-            console.log(task)
             generatePostIt(task)
+        })
+    })
+}
+// GET a specific task function
+export function getSpecificTask(title) {
+    let url = new URL(apiUrl)
+    url.searchParams.append('title', title)
+    fetchData(url).then((data) => {
+        data.forEach((task) => {
+            console.log(task)
         })
     })
 }
