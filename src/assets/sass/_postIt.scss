@@ -29,5 +29,19 @@
         width: 100%;
         object-fit: contain;
     }
+
+    .low {
+        color: green;
+    }
+    .medium {
+        color: yellow;
+    }
+    .high {
+        color: red;
+    }
+
+    .fa-calendar-days {
+        color: rgb(63, 153, 255);
+    }
 }
 // Con sass es posible cambiar una clase si el contenido html de un tag es uno u otro? Por ejemplo si dentro de <p> dice "Alta" o "Baja"

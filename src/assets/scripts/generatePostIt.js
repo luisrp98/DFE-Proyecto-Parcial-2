@@ -1,4 +1,16 @@
 export function generatePostIt(task) {
+    let taskPriorityClass = ''
+    switch (task.priority) {
+        case 'Baja':
+            taskPriorityClass = 'low'
+            break
+        case 'Media':
+            taskPriorityClass = 'medium'
+            break
+        case 'Alta':
+            taskPriorityClass = 'high'
+            break
+    }
     // It identify the main container for the post its
     const postItContainer = document.querySelector('.post-its-container')
 
@@ -8,10 +20,10 @@ export function generatePostIt(task) {
                     ${task.title}
                 </h1>
                 <div class="post-it-text">
-                    <p class="post-it-priority">
-                        <i class="fa-solid fa-circle"></i> ${task.priority}
+                    <p class="post-it-priority ">
+                        <i class="fa-solid fa-circle ${taskPriorityClass}"></i> ${task.priority}
                     </p>
-                    <p class="post-it-tag"><i class="fa-solid fa-tag"></i> ${task.tag}</p>
+                    <p class="post-it-tag "><i class="fa-solid fa-tag"></i> ${task.tag}</p>
                     <p class="post-it-date">
                         <i class="fa-solid fa-calendar-days"></i> ${task.dueDate}
                     </p>

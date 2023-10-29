@@ -104,6 +104,14 @@ body {
   .post-it img {
     width: 100%;
     object-fit: contain; }
+  .post-it .low {
+    color: green; }
+  .post-it .medium {
+    color: yellow; }
+  .post-it .high {
+    color: red; }
+  .post-it .fa-calendar-days {
+    color: #3f99ff; }
 
 .modal-bg {
   position: absolute;
