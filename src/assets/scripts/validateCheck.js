@@ -1,6 +1,5 @@
 export function validateCheck() {
     // Check the form to see if complete
-    const form = document.querySelector('.modal-content')
     const titleInput = document.getElementById('modal-form-title')
     const prioritySelect = document.getElementById('modal-form-priority')
     const tagInput = document.getElementById('modal-form-tag')
@@ -24,6 +23,5 @@ export function validateCheck() {
         alert('Agrega una fecha')
         return
     }
-    alert('Formulario enviado con éxito.')
     return true
 }

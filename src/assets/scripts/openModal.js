@@ -1,4 +1,55 @@
-export function openModal() {
+import { listenerAddTask } from '../../script.js'
+
+export function openModal(params = null, editing = false) {
+    console.log(editing + ' EDITING OPEN MODAL')
+    if (params == null) {
+        params = {}
+        params.title = ''
+        params.completed = false
+        params.priority = 'default'
+        params.tag = ''
+        params.description = ''
+        params.dueDate = ''
+
+        console.log(params)
+    }
+    // Convert API info into HTML
+    // Completed status
+    if (params.completed) {
+        console.log(params.completed)
+        params.completed = 'checked'
+    } else if (editing) {
+        params.completed = ''
+    } else {
+        params.completed = 'disabled'
+        console.log(params.completed)
+    }
+
+    // Priority
+    let selected1 = '',
+        selected2 = '',
+        selected3 = '',
+        selected4 = ''
+    // Set the option select value depending on the priority tag value
+    switch (params.priority) {
+        default:
+            selected1 = 'selected'
+            ;(selected2 = ''), (selected3 = ''), (selected4 = '')
+            break
+        case 'Baja':
+            selected2 = 'selected'
+            ;(selected1 = ''), (selected3 = ''), (selected4 = '')
+            break
+        case 'Media':
+            selected3 = 'selected'
+            ;(selected1 = ''), (selected2 = ''), (selected4 = '')
+            break
+        case 'Alta':
+            selected4 = 'selected'
+            ;(selected1 = ''), (selected2 = ''), (selected3 = '')
+            break
+    }
+
     // Create modal background
     const modal_bg = document.createElement('div')
     modal_bg.classList.add('modal-bg')
@@ -13,6 +64,7 @@ export function openModal() {
                         <label for="modal-form-title">Título</label>
                         <input
                             type="text"
+                            ${params.title}
                             name="modal-form-title"
                             id="modal-form-title"
                             placeholder="Título de la tarea"
@@ -26,7 +78,7 @@ export function openModal() {
                         type="checkbox"
                         name="modal-form-complete"
                         id="modal-form-complete"
-                        disabled
+                        ${params.completed}
                     />
                 </div>
                 <!-- Priority, Tag, Date -->
@@ -34,10 +86,10 @@ export function openModal() {
                     <div class="modal-form-column">
                         <label for="modal-form-priority">Prioridad</label>
                         <select name="modal-form-priority" id="modal-form-priority">
-                            <option value="default" disabled selected>Prioridad de la tarea</option>
-                            <option value="low">Baja</option>
-                            <option value="medium">Media</option>
-                            <option value="high">Alta</option>
+                            <option value="default" disabled ${selected1} hidden>Prioridad de la tarea</option>
+                            <option value="low" ${selected2}>Baja</option>
+                            <option value="medium" ${selected3}>Media</option>
+                            <option value="high" ${selected4}>Alta</option>
                         </select>
                     </div>
 
@@ -45,6 +97,7 @@ export function openModal() {
                         <label for="modal-form-tag">Etiqueta</label>
                         <input
                             type="text"
+                            ${params.tag}
                             name="modal-form-tag"
                             id="modal-form-tag"
                             placeholder="Etiqueta de la tarea"
@@ -53,8 +106,8 @@ export function openModal() {
 
                     <div class="modal-form-column">
                         <label for="modal-form-date">Fecha</label>
-                        <input type="date" name="modal-form-date" id="modal-form-date" />
-                    </div>
+                        <input type="date" name="modal-form-date" id="modal-form-date" ${params.dueDate}/>
+                        </div>
                 </div>
 
                 <!-- Description -->
@@ -65,7 +118,7 @@ export function openModal() {
                         id="modal-form-description"
                         rows="6"
                         placeholder="Descripción de la tarea"
-                    ></textarea>
+                    >${params.description}</textarea>
                 </div>
 
                 <!-- Buttons -->
@@ -81,4 +134,11 @@ export function openModal() {
     // Append modal in the document
     const body = document.querySelector('body')
     body.appendChild(modal_bg)
+
+    if (editing) {
+        console.log(editing + ' EDITING DENTRO DEL IF')
+        listenerAddTask(editing)
+    } else {
+        listenerAddTask()
+    }
 }

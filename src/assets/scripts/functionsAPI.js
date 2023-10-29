@@ -33,12 +33,22 @@ export function getSpecificTask(title) {
     fetchData(url).then((data) => {
         data.forEach((task) => {
             console.log(task)
-            openModal()
+            const param = {
+                title: `value="${task.title}"`,
+                completed: task.completed,
+                priority: task.priority,
+                tag: `value="${task.tag}"`,
+                description: task.description,
+                dueDate: `value="${task.dueDate}"`,
+                id: task.id,
+            }
+
+            openModal(param, true)
         })
     })
 }
 
-// PUT function
+// POST function
 export function createTask(taskData) {
     const options = {
         method: 'POST',
@@ -50,7 +60,6 @@ export function createTask(taskData) {
 
     fetchData(apiUrl, options).then((data) => {
         console.log('Datos de la API (POST):', data)
-        // Aquí puedes manejar la respuesta después de crear una tarea
     })
 }
 
