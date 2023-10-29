@@ -65,15 +65,21 @@
         justify-content: space-evenly;
 
         #modal-form-button-cancel {
-            background-color: $color-red;
+            background-color: $color-grey;
             &:hover {
-                background-color: $color-red-hover;
+                background-color: $color-grey-hover;
             }
         }
         #modal-form-button-save {
             background-color: $color-green;
             &:hover {
                 background-color: $color-green-hover;
+            }
+        }
+        #modal-form-button-delete {
+            background-color: $color-red;
+            &:hover {
+                background-color: $color-red-hover;
             }
         }
     }

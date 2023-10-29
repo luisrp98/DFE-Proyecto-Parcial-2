@@ -131,10 +131,14 @@ body {
     display: flex;
     justify-content: space-evenly; }
     .modal-content .modal-form-buttons #modal-form-button-cancel {
-      background-color: #8f1500; }
+      background-color: #868686; }
       .modal-content .modal-form-buttons #modal-form-button-cancel:hover {
-        background-color: #ff0000; }
+        background-color: #555555; }
     .modal-content .modal-form-buttons #modal-form-button-save {
       background-color: #008531; }
       .modal-content .modal-form-buttons #modal-form-button-save:hover {
         background-color: #00b140; }
+    .modal-content .modal-form-buttons #modal-form-button-delete {
+      background-color: #8f1500; }
+      .modal-content .modal-form-buttons #modal-form-button-delete:hover {
+        background-color: #ff0000; }
