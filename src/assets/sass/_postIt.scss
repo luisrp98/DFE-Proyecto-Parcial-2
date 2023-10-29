@@ -21,5 +21,10 @@
     &:hover {
         transform: scale(1.03);
     }
+    img {
+        // height: 100%;
+        width: 100%;
+        object-fit: contain;
+    }
 }
 // Con sass es posible cambiar una clase si el contenido html de un tag es uno u otro? Por ejemplo si dentro de <p> dice "Alta" o "Baja"

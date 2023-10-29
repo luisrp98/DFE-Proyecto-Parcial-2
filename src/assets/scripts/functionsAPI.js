@@ -1,4 +1,6 @@
 import { generatePostIt } from './generatePostIt.js'
+import { openModal } from './openModal.js'
+
 const apiUrl = 'https://653485e2e1b6f4c59046c7c7.mockapi.io/api/users/217209736/tasks'
 
 function fetchData(url, options) {
@@ -31,6 +33,7 @@ export function getSpecificTask(title) {
     fetchData(url).then((data) => {
         data.forEach((task) => {
             console.log(task)
+            openModal()
         })
     })
 }
