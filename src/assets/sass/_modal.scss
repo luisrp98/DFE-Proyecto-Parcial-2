@@ -64,17 +64,6 @@
         display: flex;
         justify-content: space-evenly;
 
-        button {
-            min-width: 130px;
-            height: 40px;
-            color: #fff;
-            padding: 5px 10px;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            outline: none;
-            border-radius: 0.4rem;
-            border: none;
-        }
         #modal-form-button-cancel {
             background-color: $color-red;
             &:hover {

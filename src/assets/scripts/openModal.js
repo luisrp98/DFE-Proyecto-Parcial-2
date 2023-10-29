@@ -34,6 +34,7 @@ export function openModal() {
                     <div class="modal-form-column">
                         <label for="modal-form-priority">Prioridad</label>
                         <select name="modal-form-priority" id="modal-form-priority">
+                            <option value="default" disabled selected>Prioridad de la tarea</option>
                             <option value="low">Baja</option>
                             <option value="medium">Media</option>
                             <option value="high">Alta</option>

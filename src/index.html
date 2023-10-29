@@ -33,8 +33,26 @@
                 <i class="fa-brands fa-x-twitter"></i>
             </div>
         </div>
-        <div class="post-its-container">
-            <!-- Here is dynamically created the post-its from the API info -->
+        <div class="content">
+            <div class="controls">
+                <button id="control-add-task">Agregar tarea</button>
+                <form action="">
+                    <label for="">Prioridad</label>
+                    <select name="" id="">
+                        <option value="low">Baja</option>
+                        <option value="medium">Media</option>
+                        <option value="high">Alta</option>
+                    </select>
+                    <label for="">Tag</label>
+                    <input type="text" />
+                    <label for="">Fecha</label>
+                    <input type="date" name="" id="" />
+                    <button id="control-search-task">Buscar</button>
+                </form>
+            </div>
+            <div class="post-its-container">
+                <!-- Here is dynamically created the post-its from the API info -->
+            </div>
         </div>
 
         <script type="module" src="script.js"></script>
