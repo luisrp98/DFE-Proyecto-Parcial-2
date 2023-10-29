@@ -31,11 +31,13 @@ export function listenerAddTask(id = null, editing = false) {
                 const descriptionTextArea = document.getElementById(
                     'modal-form-description'
                 ).value
+                const validateCheck =
+                    document.getElementById('modal-form-complete').checked
 
                 const formData = {
                     title: titleInput,
                     description: descriptionTextArea,
-                    completed: false,
+                    completed: validateCheck,
                     priority: prioritySelect,
                     tag: tagInput,
                     dueDate: dateInput,
