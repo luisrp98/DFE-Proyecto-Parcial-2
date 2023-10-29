@@ -1,29 +1,58 @@
+@import '_variables.scss';
 body {
     display: flex;
-    background-color: steelblue;
+    background-image: repeating-linear-gradient(
+        45deg,
+        rgba(88, 72, 217, 0.15) 0,
+        rgba(88, 72, 217, 0.15) 8px,
+        transparent 0,
+        transparent 50%
+    );
+    background-size: 24px 24px;
+    background-color: #7067cf;
 
     #header {
         width: 25vw;
         display: flex;
         flex-direction: column;
         align-items: center;
-        justify-content: space-between;
+        justify-content: space-around;
         padding: 1rem 2rem;
         z-index: 2;
 
-        background-image: linear-gradient(
-            to left bottom,
-            #d14da8,
-            #bb529b,
-            #a6558d,
-            #91577f,
-            #7c5771
+        background: rgb(123, 40, 112);
+        background: linear-gradient(
+            152deg,
+            rgba(123, 40, 112, 1) 34%,
+            rgba(51, 12, 47, 1) 100%
         );
         box-shadow: 12px 0px 5px 0px rgba(0, 0, 0, 0.75);
         -webkit-box-shadow: 12px 0px 5px 0px rgba(0, 0, 0, 0.75);
         -moz-box-shadow: 12px 0px 5px 0px rgba(0, 0, 0, 0.75);
         #logo {
             height: 20rem;
+            -webkit-filter: drop-shadow(5px 5px 5px #222);
+            filter: drop-shadow(5px 5px 5px #222);
+        }
+        p {
+            font-size: 1.3rem;
+            color: white;
+        }
+        .social {
+            display: flex;
+            justify-content: space-around;
+            width: 50%;
+
+            a {
+                color: white;
+                i {
+                    transition: all 0.15s ease-in-out; // Agrega la transición aquí
+                    &:hover {
+                        color: $color-sunglow;
+                        transform: scale(1.5); // Corrige la sintaxis aquí
+                    }
+                }
+            }
         }
     }
     .content {
@@ -34,13 +63,18 @@ body {
         display: flex;
         justify-content: space-between;
         #control-add-task {
-            background-color: #d14da8;
+            background-color: $color-dark-purple;
+            transition: all 0.15s ease-in-out; // Agrega la transición aquí
+            &:hover {
+                background-color: $color-dark-purple-hover;
+                transform: scale(1.2); // Corrige la sintaxis aquí
+            }
         }
         form {
-            background-color: cadetblue;
+            background-color: $color-grey-hover;
 
             #control-search-task {
-                background-color: #d14da8;
+                background-color: $color-grey;
             }
         }
     }

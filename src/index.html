@@ -19,18 +19,23 @@
     </head>
     <body>
         <div id="header">
-            <img id="logo" src="assets/img/logo.png" alt="" />
+            <img id="logo" src="assets/img/todortle.png" alt="" />
             <p>
-                El proyecto tiene como objetivo aplicar los conocimientos adquiridos en el
-                curso(sintaxis de JavaScript, manipulación del DOM, protocolo HTTP y Fetch
-                API). En este proyecto, debes crear una aplicación de lista de tareas
-                (TODO List) que se conecta a una API externa para realizar operaciones
-                CRUD (Crear, Leer, Actualizar y Borrar) en tareas específicas."
+                Este proyecto tiene como objetivo aplicar los conocimientos adquiridos en
+                el curso de Desarrollo Front End de la Universidad de Sonora (sintaxis de
+                JavaScript, manipulación del DOM, protocolo HTTP y Fetch API). El proyecto
+                consistia en crear una TODO list que se conecte a una API externa para
+                realizar operaciones CRUD en tareas específicas."
             </p>
             <div class="social">
-                <i class="fa-brands fa-github"></i>
-                <i class="fa-brands fa-linkedin"></i>
-                <i class="fa-brands fa-x-twitter"></i>
+                <a href="https://github.com/luisrp98"
+                    ><i class="fa-brands fa-github fa-xl"></i
+                ></a>
+                <a href="https://twitter.com/luisromop_"
+                    ><i class="fa-brands fa-x-twitter fa-xl"></i></a
+                ><a href="https://www.linkedin.com/in/luisromop/">
+                    <i class="fa-brands fa-linkedin fa-xl"></i>
+                </a>
             </div>
         </div>
         <div class="content">
@@ -38,16 +43,16 @@
                 <button id="control-add-task">Agregar tarea</button>
                 <form action="">
                     <label for="">Prioridad</label>
-                    <select name="" id="">
+                    <select name="" id="" disabled>
                         <option value="low">Baja</option>
                         <option value="medium">Media</option>
                         <option value="high">Alta</option>
                     </select>
                     <label for="">Tag</label>
-                    <input type="text" />
+                    <input type="text" disabled />
                     <label for="">Fecha</label>
-                    <input type="date" name="" id="" />
-                    <button id="control-search-task">Buscar</button>
+                    <input type="date" name="" id="" disabled />
+                    <button id="control-search-task" disabled>Buscar</button>
                 </form>
             </div>
             <div class="post-its-container">

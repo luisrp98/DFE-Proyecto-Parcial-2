@@ -20,4 +20,7 @@ button {
     outline: none;
     border-radius: 0.4rem;
     border: none;
+    box-shadow: 10px 10px 10px -2px rgba(0, 0, 0, 0.48);
+    -webkit-box-shadow: 10px 10px 10px -2px rgba(0, 0, 0, 0.48);
+    -moz-box-shadow: 10px 10px 10px -2px rgba(0, 0, 0, 0.48);
 }
