@@ -1,7 +1,6 @@
 import { listenerAddTask } from '../../script.js'
 
 export function openModal(params = null, editing = false) {
-    console.log(editing + ' EDITING OPEN MODAL')
     if (params == null) {
         params = {}
         params.title = ''
@@ -10,19 +9,16 @@ export function openModal(params = null, editing = false) {
         params.tag = ''
         params.description = ''
         params.dueDate = ''
-
-        console.log(params)
     }
+
     // Convert API info into HTML
     // Completed status
     if (params.completed) {
-        console.log(params.completed)
         params.completed = 'checked'
     } else if (editing) {
         params.completed = ''
     } else {
         params.completed = 'disabled'
-        console.log(params.completed)
     }
 
     // Priority
@@ -124,6 +120,7 @@ export function openModal(params = null, editing = false) {
                 <!-- Buttons -->
                 <div class="modal-form-buttons">
                     <button id="modal-form-button-cancel">Cancelar</button>
+                    <button id="modal-form-button-delete">Borrar</button>
                     <button id="modal-form-button-save">Guardar</button>
                 </div>
     `
@@ -136,9 +133,9 @@ export function openModal(params = null, editing = false) {
     body.appendChild(modal_bg)
 
     if (editing) {
-        console.log(editing + ' EDITING DENTRO DEL IF')
-        listenerAddTask(editing)
-    } else {
+        console.log(params.id)
+        listenerAddTask(params.id, editing)
+    } else if (!editing) {
         listenerAddTask()
     }
 }

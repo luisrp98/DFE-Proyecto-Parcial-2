@@ -18,12 +18,9 @@ const buttonAddTask = document.querySelector('#control-add-task')
 buttonAddTask.addEventListener('click', function () {
     openModal()
 })
-export function listenerAddTask(editing = false) {
-    console.log(editing + ' EDITING PERO EN EL LISTENER ASI PRIMERO')
-    console.log(validateCheck() + 'VALIDATION FLAG')
-    // Add event listener to the body and wait for the buttons of the modal to activate
-    document.body.addEventListener('click', function (e) {
-        // Check if the click event was originated in the button with id "modal-form-button-save".
+export function listenerAddTask(id = null, editing = false) {
+    // Define the event handler function
+    function clickHandler(e) {
         if (e.target && e.target.id === 'modal-form-button-save') {
             if (validateCheck()) {
                 const titleInput = document.getElementById('modal-form-title').value
@@ -35,8 +32,6 @@ export function listenerAddTask(editing = false) {
                     'modal-form-description'
                 ).value
 
-                console.log(dateInput)
-                // Create JSON object with the form info
                 const formData = {
                     title: titleInput,
                     description: descriptionTextArea,
@@ -45,9 +40,8 @@ export function listenerAddTask(editing = false) {
                     tag: tagInput,
                     dueDate: dateInput,
                 }
-                alert(editing + ' ESTO ES ANTES DEL IF')
                 if (editing) {
-                    updateTask(4, formData)
+                    updateTask(id, formData)
                 } else {
                     createTask(formData)
                 }
@@ -57,21 +51,29 @@ export function listenerAddTask(editing = false) {
                 }, 1000)
 
                 closeModal()
+
+                // Remove the event listener after it's used
+                document.body.removeEventListener('click', clickHandler)
             }
         }
+
         if (e.target && e.target.id === 'modal-form-button-cancel') {
             closeModal()
+
+            // Remove the event listener after it's used
+            document.body.removeEventListener('click', clickHandler)
         }
-    })
+    }
+
+    // Add the event listener to the body
+    document.body.addEventListener('click', clickHandler)
 }
-// listenerAddTask()
 // #endregion
 
 // Edit and delete task section
 // #region Edit task section
 // This listener await to the click in the post its
 const postItContainer = document.querySelector('.post-its-container')
-
 postItContainer.addEventListener('click', function (e) {
     const postIt = e.target.closest('.post-it')
 
