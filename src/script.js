@@ -56,7 +56,20 @@ export function listenerAddTask(id = null, editing = false) {
                 document.body.removeEventListener('click', clickHandler)
             }
         }
+        if (e.target && e.target.id === 'modal-form-button-delete') {
+            if (confirm('¿Estás seguro de eliminar esta tarea?')) {
+                deleteTask(id)
+                alert('Tarea eliminada')
+            }
+            clearPostIt()
+            setTimeout(function () {
+                getTasks()
+            }, 1000)
+            closeModal()
 
+            // Remove the event listener after it's used
+            document.body.removeEventListener('click', clickHandler)
+        }
         if (e.target && e.target.id === 'modal-form-button-cancel') {
             closeModal()
 
